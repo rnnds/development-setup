@@ -13,3 +13,11 @@ mvn -v
 echo "
 [NODE]"
 node -v
+
+echo "
+[DOCKER]"
+docker -v
+
+echo "
+[DOCKER COMPOSE]"
+docker-compose -v

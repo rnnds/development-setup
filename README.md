@@ -23,6 +23,12 @@ OS name: "linux", version: "4.15.0-76-generic", arch: "amd64", family: "unix"
 [NODE]
 v12.16.1
 
+[DOCKER]
+Docker version 19.03.6, build 369ce74a3c
+
+[DOCKER COMPOSE]
+docker-compose version 1.24.1, build 4667896b
+
 ```
 
 ## Testing
