@@ -1,5 +1,15 @@
 #!/bin/bash
-sudo apt-get install ansible -y
-sudo cp ansible/hosts /etc/ansible/hosts
-ansible-playbook ansible/main.yml
+cp hosts /etc/ansible/hosts
+ansible-playbook galaxy.yml
 
+echo "
+[JAVA]"
+java -version
+
+echo "
+[MAVEN]"
+mvn -v
+
+echo "
+[NODE]"
+node -v
