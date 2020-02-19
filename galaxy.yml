@@ -1,0 +1,9 @@
+---
+- hosts: all
+  roles:
+    - role: geerlingguy.java
+      java_packages:
+        - openjdk-8-jdk
+    - role: gantsign.maven
+      maven_version: '3.3.9'
+    - role: node
