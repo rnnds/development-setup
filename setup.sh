@@ -1,23 +1,12 @@
-#!/bin/bash
-cp hosts /etc/ansible/hosts
-ansible-playbook galaxy.yml
+# use only before Ubuntu 20.04
+# sudo apt-add-repository -y ppa:ansible/ansible
 
-echo "
-[JAVA]"
-java -version
+echo "----------> Installing Ansible "
+sudo apt-get update
+sudo apt-get install -y software-properties-common ansible
 
-echo "
-[MAVEN]"
-mvn -v
+echo "----------> Downloading Ansible roles"
+ansible-galaxy install -r requirements.yml -p ./roles --force
 
-echo "
-[NODE]"
-node -v
-
-echo "
-[DOCKER]"
-docker -v
-
-echo "
-[DOCKER COMPOSE]"
-docker-compose -v
+echo "----------> Playing Ansible playbooks"
+ansible-playbook playbook.yml -i hosts --ask-become-pass
